@@ -67,7 +67,7 @@ export default function Footer() {
       
       <BottomNavigationAction
         label="Navigation"
-        value="/Navi"
+        value="/navi"
         icon={<LocationOnIcon />}
         sx={{
           color: value === '/shops' ? '#FFFFFF' : '#FFFFFF', // Change color when selected
