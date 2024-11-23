@@ -10,7 +10,7 @@ const ComingSoon = () => {
       }, []);
     
       useEffect(() => {
-        document.body.style.zoom = "90%"; // Set zoom level to 80%
+        document.body.style.zoom = "80%"; // Set zoom level to 80%
         return () => {
           document.body.style.zoom = "100%"; // Reset on component unmount
         };
