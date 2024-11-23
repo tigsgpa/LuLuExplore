@@ -154,7 +154,7 @@ const ComingSoon = () => {
       }}
     >
       <img
-        src="/src/assets/comsoon.png"
+        src="https://i.ibb.co/7bV7rKH/comsoon.png"
         alt="Coming Soon"
         style={{
           maxWidth: '100%',
