@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Button, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.zoom = "80%"; // Set zoom level to 90%
+    document.body.style.zoom = "90%"; // Set zoom level to 80%
     return () => {
       document.body.style.zoom = "100%"; // Reset on component unmount
     };
@@ -18,150 +19,143 @@ const Home = () => {
   const tiles = [
     {
       id: 1,
-      title: "Navigate the Mall",
-      description: "Find shops and navigate seamlessly through the mall.",
+      title: "Find Your Shops",
+      description: "Find shops and navigate easily through the mall.",
       img_url:
-        "https://images.squarespace-cdn.com/content/v1/64073c3afdb5c4737243d022/cbb7f3bd-fa8f-4b8a-9d45-0336e2759184/designinternational-lulu+mall+trivandrum-thiruvananthapuram-india-plaza+and+skylight-cover.jpg",
-      buttonText: "Explore your shop",
-      action: () => navigate("/navi"), // Redirects to /navi
+        "https://images.squarespace-cdn.com/content/v1/64073c3afdb5c4737243d022/277c4047-7c06-4a75-b135-af645a3e13c6/designinternational-lulu+mall+trivandrum-thiruvananthapuram-india-plaza+people.jpg",
+      buttonText: "Navigate",
+      action: () => navigate("/shops"),
     },
     {
       id: 2,
-      title: "Explore the Food Court",
-      description: "Discover a variety of cuisines and dining experiences.",
+      title: "Explore Our Menu",
+      description: "Discover delicious food options and cuisines.",
       img_url:
-        "https://cdn-ijnhp.nitrocdn.com/pywIAllcUPgoWDXtkiXtBgvTOSromKIg/assets/images/optimized/rev-5794eaa/www.jaypeehotels.com/blog/wp-content/uploads/2020/09/chinese-1.jpg",
-      buttonText: "Explore our menu",
-      action: () => navigate("/explore"), // Redirects to /explore
+        "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg",
+      buttonText: "Explore",
+      action: () => navigate("/explore"),
     },
   ];
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: "flex",
-        marginTop:'-200px',
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
-        height: "76vh",
-        gap: "20px",
-        padding: "20px",
+        gap: 4,
+        padding: 4,
+        background: "",
       }}
     >
       {tiles.map((tile) => (
-        <div
+        <Box
           key={tile.id}
-          style={{
-            width: "100%",
-            maxWidth: "350px",
-            height: "400px",
-            position: "relative",
-            backgroundImage: `url(${tile.img_url})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            borderRadius: "15px",
-            overflow: "hidden",
+          sx={{
             display: "flex",
-            alignItems: "flex-end",
-            cursor: "pointer",
-            boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.3)",
-            transition: "transform 0.3s ease, box-shadow 0.3s ease",
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.transform = "scale(1.05)";
-            e.currentTarget.style.boxShadow =
-              "0px 15px 30px rgba(0, 0, 0, 0.5)";
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-            e.currentTarget.style.boxShadow =
-              "0px 8px 20px rgba(0, 0, 0, 0.3)";
+            flexDirection: "column",
+            alignItems: "flex-start",
+            backgroundColor: "#f8f8f",
+            borderRadius: "20px",
+            border: "2px solid #21005D", // Added small border
+            overflow: "hidden",
+            boxShadow: "0 8px 20px rgba(0.8, 0.8, 0.8, 0.8)",
+            width: "90%",
+            maxWidth: "800px",
+            padding: "20px",
           }}
         >
-          {/* Transparent Overlay */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              background: "rgba(255, 255, 255, 0.2)", // Transparent white overlay
-              backdropFilter: "blur(1px)", // Adds a glass-like effect
-            }}
-          ></div>
-
-          {/* Content */}
-          <div
-            style={{
-              zIndex: 2,
-              padding: "15px",
+          {/* Heading */}
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              color: "#21005D",
+              marginBottom: "15px",
+              fontSize: "1.5rem",
               textAlign: "center",
-              color: "white",
-              boxShadow:"100",
               width: "100%",
-              background: "rgba(0, 0, 0, 0.3)", // Slightly transparent black for contrast
-              backdropFilter: "blur(1px)", // Enhances the glassmorphism effect
-              borderRadius: "10px", // Rounds the edges of the content area
-              margin: "10px",
+              borderBottom: "2px solid #21005D", // Optional underline style
+              paddingBottom: "5px",
             }}
           >
-            <h2
-              style={{
-                fontWeight: "bold",
-                fontSize: "1.5rem",
-                marginBottom: "10px",
-                textShadow: "1px 1px 8px rgba(0, 0, 0, 0.7)",
+            {tile.title}
+          </Typography>
+
+          {/* Content */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "flex-start",
+              width: "100%",
+            }}
+          >
+            {/* Image Section */}
+            <Box
+              sx={{
+                flexShrink: 0,
+                width: "200px",
+                height: "200px",
+                borderRadius: "20px",
+                overflow: "hidden",
+                marginRight: "20px",
               }}
             >
-              {tile.title}
-            </h2>
-            <p
-              style={{
-                fontSize: "1.2rem",
-                marginBottom: "15px",
-                lineHeight: "1.4",
-                color: "white",
-              }}
-            >
-              {tile.description}
-            </p>
-            {/* Single Button */}
-            <div style={{ textAlign: "center", marginTop: "10px" }}>
-              <button
-                style={{
-                  background: "linear-gradient(to right, #660660, #a5076b)", // Updated gradient background
-                  color: "white",
-                  border: "none",
-                  borderRadius: "30px",
-                  padding: "12px 16px",
-                  fontSize: "1.1rem",
+              <Box
+                component="img"
+                src={tile.img_url}
+                alt={tile.title}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  boxShadow: "0 8px 20px rgba(0.8, 0.8, 0.8, 0.8)",
+                }}
+              />
+            </Box>
+
+            {/* Text Section */}
+            <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+              {/* Description */}
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#000000",
+                  marginBottom: "15px",
+                  fontSize: "1rem",
+                }}
+              >
+                {tile.description}
+              </Typography>
+
+              {/* Button */}
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundImage:
+                    "linear-gradient(to right, #660660, #a5076b)",
+                  color: "#FFF",
+                  textTransform: "none",
+                  fontSize: "1rem",
                   fontWeight: "bold",
-                  cursor: "pointer",
-                  boxShadow: "0px 8px 20px rgba(165, 7, 107, 0.3)",
-                  transition: "all 0.3s ease",
+                  padding: "10px 20px",
+                  borderRadius: "50px",
+                  "&:hover": {
+                    backgroundImage:
+                      "linear-gradient(to right, #a5076b, #660660)",
+                    boxShadow: "0 8px 20px rgba(165, 7, 107, 0.4)",
+                  },
                 }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  tile.action();
-                }}
-                onMouseOver={(e) =>
-                  (e.target.style.background =
-                    "linear-gradient(to right, #a5076b, #660660)") // Reversed gradient on hover
-                }
-                onMouseOut={(e) =>
-                  (e.target.style.background =
-                    "linear-gradient(to right, #660660, #a5076b)") // Original gradient on mouse out
-                }
+                onClick={tile.action}
               >
                 {tile.buttonText}
-              </button>
-            </div>
-          </div>
-        </div>
+              </Button>
+            </Box>
+          </Box>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 
