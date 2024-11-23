@@ -53,7 +53,7 @@ const Exploreby = () => {
 
   return (
     <Box sx={{ width: '100%', padding: '1%' }}>
-      <Grid container spacing={4} justifyContent="center" marginTop={-37} >
+      <Grid container spacing={4} justifyContent="center" marginTop={-30} >
         {datas.map((data) => (
           <Grid item xs={12} sm={6} md={4} key={data.id}>
             <Card
