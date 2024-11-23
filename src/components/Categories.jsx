@@ -46,7 +46,7 @@ const Home = () => {
         gap: 4,
         padding: 1,
         background: "",
-        marginTop: "-105px",
+        marginTop: "-130px",
       }}
     >
       {tiles.map((tile) => (
