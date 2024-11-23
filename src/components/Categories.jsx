@@ -1,3 +1,5 @@
+
+
 import React, { useEffect } from "react";
 import { Button, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +12,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.zoom = "90%"; // Set zoom level to 80%
+    document.body.style.zoom = "90%"; // Set zoom level to 90%
     return () => {
       document.body.style.zoom = "100%"; // Reset on component unmount
     };
@@ -44,7 +46,7 @@ const Home = () => {
         flexDirection: "column",
         alignItems: "center",
         gap: 4,
-        padding: 4,
+        padding: 1,
         background: "",
       }}
     >
@@ -54,10 +56,11 @@ const Home = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
+            
             alignItems: "flex-start",
-            backgroundColor: "#f8f8f",
+            backgroundColor: "#B0903D",
             borderRadius: "20px",
-            border: "2px solid #21005D", // Added small border
+            border: "2px solid #21005D",
             overflow: "hidden",
             boxShadow: "0 8px 20px rgba(0.8, 0.8, 0.8, 0.8)",
             width: "90%",
@@ -67,7 +70,7 @@ const Home = () => {
         >
           {/* Heading */}
           <Typography
-            variant="h6"
+            variant="h8"
             sx={{
               fontWeight: "bold",
               color: "#21005D",
@@ -75,7 +78,7 @@ const Home = () => {
               fontSize: "1.5rem",
               textAlign: "center",
               width: "100%",
-              borderBottom: "2px solid #21005D", // Optional underline style
+              borderBottom: "2px solid #21005D",
               paddingBottom: "5px",
             }}
           >
