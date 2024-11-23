@@ -1,5 +1,3 @@
-
-
 import React, { useEffect } from "react";
 import { Button, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +10,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.zoom = "80%"; // Set zoom level to 90%
+    document.body.style.zoom = "90%"; // Set zoom level to 90%
     return () => {
       document.body.style.zoom = "100%"; // Reset on component unmount
     };
@@ -26,7 +24,7 @@ const Home = () => {
       img_url:
         "https://images.squarespace-cdn.com/content/v1/64073c3afdb5c4737243d022/277c4047-7c06-4a75-b135-af645a3e13c6/designinternational-lulu+mall+trivandrum-thiruvananthapuram-india-plaza+people.jpg",
       buttonText: "Navigate",
-      action: () => navigate("/shops"),
+      action: () => navigate("/navi"), // Redirects to /navi
     },
     {
       id: 2,
@@ -35,7 +33,7 @@ const Home = () => {
       img_url:
         "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg",
       buttonText: "Explore",
-      action: () => navigate("/explore"),
+      action: () => navigate("/explore"), // Redirects to /explore
     },
   ];
 
@@ -56,7 +54,6 @@ const Home = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            
             alignItems: "flex-start",
             backgroundColor: "#B0903D",
             borderRadius: "20px",
