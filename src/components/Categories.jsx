@@ -55,7 +55,7 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            backgroundColor: "#B0903D",
+            backgroundColor: "",
             borderRadius: "20px",
             border: "2px solid #21005D",
             overflow: "hidden",
