@@ -9,7 +9,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.zoom = "90%"; // Set zoom level to 90%
+    document.body.style.zoom = "100%"; // Set zoom level to 90%
     return () => {
       document.body.style.zoom = "100%"; // Reset on component unmount
     };
