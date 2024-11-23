@@ -48,15 +48,7 @@ export default function Footer() {
         }}
       />
 
-      <BottomNavigationAction
-        label="Navigation"
-        value="/Navi"
-        icon={<LocationOnIcon />}
-        sx={{
-          color: value === '/shops' ? '#FFFFFF' : '#FFFFFF', // Change color when selected
-        }}
-      />
-      <BottomNavigationAction
+        <BottomNavigationAction
         label="Restaurants"
         value="/restaurant"
         icon={<RestaurantIcon />}
@@ -73,6 +65,15 @@ export default function Footer() {
         }}
       />
       
+      <BottomNavigationAction
+        label="Navigation"
+        value="/Navi"
+        icon={<LocationOnIcon />}
+        sx={{
+          color: value === '/shops' ? '#FFFFFF' : '#FFFFFF', // Change color when selected
+        }}
+      />
+    
     </BottomNavigation>
   );
 }
