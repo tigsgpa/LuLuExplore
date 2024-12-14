@@ -14,14 +14,14 @@ const CuisineRestaurants = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.zoom = "80%"; // Set zoom level to 80%
+    document.body.style.zoom = "90%"; // Set zoom level to 80%
     return () => {
       document.body.style.zoom = "100%"; // Reset on component unmount
     };
   }, []);
 
   const handleRestaurantClick = (restaurantId) => {
-    navigate(`/restaurant/${restaurantId}/menu/${cuisineName}`);
+    navigate(`/restaurant/${restaurantId}`);
   };
 
   useEffect(() => {
@@ -30,7 +30,27 @@ const CuisineRestaurants = () => {
         const response = await axios.get(`http://localhost:8080/api/restaurants-by-tag`, {
           params: { tag: cuisineName },
         });
-        setRestaurants(response.data.data);
+
+        const sortingOrders = {
+          "Biriyani": ["HALAIS", "PARAGON", "DINDUGAL THALAPPAKATTI", "BARBEQUE NATION", "NORTH EXPRESS", "NAGAS"],
+          // Add other cuisine sorting logic here
+        };
+
+        let fetchedRestaurants = response.data.data;
+
+        if (sortingOrders[cuisineName]) {
+          const order = sortingOrders[cuisineName].map((name) => name.trim().toLowerCase());
+          fetchedRestaurants = fetchedRestaurants.sort((a, b) => {
+            const indexA = order.indexOf(a.shop_name.trim().toLowerCase());
+            const indexB = order.indexOf(b.shop_name.trim().toLowerCase());
+            if (indexA === -1 && indexB === -1) return 0;
+            if (indexA === -1) return 1;
+            if (indexB === -1) return -1;
+            return indexA - indexB;
+          });
+        }
+
+        setRestaurants(fetchedRestaurants);
       } catch (error) {
         console.error("Error fetching restaurants:", error);
         setError("Failed to load restaurants.");
@@ -41,13 +61,49 @@ const CuisineRestaurants = () => {
     fetchRestaurants();
   }, [cuisineName]);
 
-  if (loading) return <div>Loading...</div>;
+  const rotatingLogoStyle = {
+    width: '75px',
+    height: '75px',
+    animation: 'spin 2s linear infinite',
+  };
+
+  const loadingContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100vh', // Full-page height for centering
+    textAlign: 'center', // Ensure proper alignment
+  };
+
+  const keyframesSpin = `
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  `;
+
+  if (loading)
+    return (
+      <div style={loadingContainerStyle}>
+        <style>{keyframesSpin}</style>
+        <img
+          src="https://www.hyderabad.lulumall.in/wp-content/uploads/2023/07/unnamed-removebg-preview.png"
+          alt="Loading..."
+          style={rotatingLogoStyle}
+        />
+      </div>
+    );
+
   if (error) return <div>{error}</div>;
 
   return (
     <div style={{ padding: '20px', fontFamily: "'Poppins', sans-serif" }}>
       <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>
-        Restaurants offering {['Arabic', 'Italian', 'Mexican', 'Chinese', 'South Indian', 'North Indian'].includes(cuisineName) ? `${cuisineName} Cuisine` : cuisineName}
+        Restaurants offering {['Biryani', 'South Indian', 'North Indian'].includes(cuisineName) ? `${cuisineName} Cuisine` : cuisineName}
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', padding: '10px' }}>
         {restaurants.length > 0 ? (
