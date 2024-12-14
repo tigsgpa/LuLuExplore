@@ -38,7 +38,7 @@ const FoodMenuAndCuisine = () => {
     { name: "Tacos", image:"https://png.pngtree.com/png-clipart/20230422/ourmid/pngtree-mexican-taco-crepes-with-lemon-sauce-psd-transparent-png-image_6720528.png"},
     { name: "Meals", image:"https://png.pngtree.com/png-clipart/20220813/ourmid/pngtree-onam-simple-sadhya-served-in-banana-leaf-png-image_6109188.png"},
     { name: "Snacks", image:"https://static.vecteezy.com/system/resources/previews/013/167/413/non_2x/diwali-snacks-and-sweets-free-png.png"},
-    { name: "Sizzler",image:"https://www.yankisizzlerr.com/wp-content/uploads/2021/10/Yanki-Special-Sizzler.png"},
+    { name: "Sizzler",image:"https://png.pngtree.com/png-vector/20231023/ourmid/pngtree-fajita-fiesta-a-culinary-journey-through-sizzling-delights-clip-art-transpreant-png-image_10344674.png"},
     { name: "Curd Rice",image:"https://static.vecteezy.com/system/resources/thumbnails/027/144/362/small_2x/tasty-cooked-white-rice-isolated-on-transparent-background-png.png"},
     { name: "Kebabs",image:"https://static.vecteezy.com/system/resources/thumbnails/042/350/476/small_2x/ai-generated-3d-rendering-of-a-grilled-beef-kebab-on-transparent-background-ai-generated-png.png"},
     { name: "Broasted",image:"https://png.pngtree.com/png-vector/20231015/ourmid/pngtree-fried-chicken-and-french-fries-on-plate-png-image_10165794.png"},
