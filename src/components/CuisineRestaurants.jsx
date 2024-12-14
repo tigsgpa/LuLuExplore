@@ -27,13 +27,46 @@ const CuisineRestaurants = () => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/restaurants-by-tag`, {
+        const response = await axios.get(`https://backend-05of.onrender.com/api/restaurants-by-tag`, {
           params: { tag: cuisineName },
         });
 
         const sortingOrders = {
-          "Biriyani": ["HALAIS", "PARAGON", "DINDUGAL THALAPPAKATTI", "BARBEQUE NATION", "NORTH EXPRESS", "NAGAS"],
-          // Add other cuisine sorting logic here
+          "Biryani": ["HALAIS", "PARAGON", "DINDUGAL THALAPPAKATTI", "BARBEQUE NATION",  "NORTH EXPRESS", "NAGAS"],
+          "Fried Rice" : ["RICE AND NOODLES", "WOW CHINA" , "FLAME N GO", "PARAGON", "HOTTEY SMOKEY"],
+          "Shawarma / Rolls and Wraps" : ["KLUB HOUSE", "SUBWAY", "WRAP VIBES", "CHICKING", "BURGER KING", "TACO BELL"],
+          "Burger" : ["BURGER KING", "Mc' DONALD", "CHICKING", "KFC"],
+          "Bread" : ["VASANTA BHAVAN", "NORTH EXPRESS", "PARAGON", "NAGAS","VAIGA'S OOTUPURA"],
+          "Pure Veg" : ["VASANTA BHAVAN", "VAIGA'S OOTUPURA"],
+          "Noodles" : ["RICE AND NOODLES", "FLAME N GO", "WOW CHINA", "PARAGON", "HOTTEY SMOKEY"],
+          "Momos" : ["WOW MOMO", "RICE AND NOODLES"],
+          "Ice Cream / Desserts" : ["AMUL ICE CREAMS", "ICE CREAM CHEF", "BASKIN ROBBINS", "COLD STONE CREAMERY", "MY FRYOLAND", "THE MUFFIN HOUSE", "Mc' DONALD", "BURGER KING"],
+          "Pizza" : [ "PIZZA HUT","DOMINOS","PIZZA RICOTTA"],
+          "Pulao" : ["VASANTA BHAVAN", "NORTH EXPRESS", "PARAGON"],   
+          "Soup" : ["RICE AND NOODLES", "BARBEQUE NATION", "WOW CHINA", "HALAIS",  "NORTH EXPRESS", "PARAGON", "HOTTEY SMOKEY", "FLAME N & GO", "VASANTA BHAVAN"],
+          "Kothu Paratta" : ["DINDUGAL THALAPPAKATTI", "HALAIS"] ,
+          "Sandwich" : ["SUBWAY", "STARBUCKS","COSTA COFFEE","THE MUFFIN HOUSE","CHAI-CHAI", "KLUB HOUSE", "COFFEE CUP", "SELFIE TEA","OVENLY"],
+          "Seafood" : [ "PARAGON","HALAIS"," DINDUGAL THALAPPAKATTI", "BARBEQUE NATION", "NORTH EXPRESS"],
+          "Tacos" : ["TACO BELL","CHICKING", "BURGER KING"],
+          "Meals" : ["PARAGON", "VASNATHABHAVAN", "VAIGA'S OOTUPURA"],
+          "Snacks" : ["SELFIE TEA", "CHAI- CHAI", "OVENLY", "VAIGAS OOTUPURA", "THE MUFFIN HOUSE"],
+          "Sizzler" : ["HOTTEY SMOKEY" ,"WOW CHINA","WOW MOMO","VASANTA BHAVAN"],
+          "Curd Rice" : ["VASNATHA BHAVAN", "VAIGA'S OOTUPURA"],
+          "Kebabs" : ["NORTH EXPRESS", "BARBEQUE NATION", "PARAGON"],
+          "Broasted" : ["KFC","CHICKING","BURGERKING","COFFEE CUP"],
+          "Chaat" : ["NORTH EXPRESS","SEETAPHAL","BARBEQUE NATION"],
+          "Waffles" : ["BELGIAN WAFFLE"],
+          "Cafe" : ["STARBUCKS", "COSTA COFFEE", "THE MUFFIN HOUSE", "COFFEE CUP"],
+          "Falooda / Shake" : ["FALOODA NATION", "FRUIT BAE", "SEETAPHAL", "FROZEN BOTTLE", "MOUZY", "AMUL ICE CREAMS", "COFFEE CUP", "BASKIN ROBBINS", "STARBUCKS", "COLD STONE CREAMERY", "BURGER KING"],
+          "Tea / Coffee" : ["CHAI CHAI", "SELFIE TEA", "VAIGA'S OOTUPURA", "OVENLY", "VASANTA BHAVAN", "HALAIS"],
+          "North Indian" : ["NORTH EXPRESS", "BARBEQUE NATION"],
+          "South Indian" : ["VASANTA BHAVAN", "VAIGA'S OOTUPURA", "HALAIS", "DINDUGAL THALAPPAKKATTI"],
+          "Mexican" : ["TACOBELL"],
+          "Chinese" : ["RICE & NOODLES", "WOW  MOMO" , "WOW CHINA", "FLAME N GO", "PARAGON"],
+          "Italian" : ["PIZZA HUT", "DOMINOES", "PIZZA RICOTTA"],
+          "Desserts" : ["AMUL ICE CREAMS", "ICE CREAM CHEF", "BASKIN ROBBINS"],
+          "Snacks" : ["SELFIE TEA", "CHAI CHAI", "OVENLY"],
+          "Pan Asian" : ["FLAME N GO"]
         };
 
         let fetchedRestaurants = response.data.data;
