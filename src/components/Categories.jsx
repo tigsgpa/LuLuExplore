@@ -1,21 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Home = () => {
-  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    document.body.style.zoom = "80%"; // Set zoom level to 90%
+    document.body.style.zoom = "80%"; // Set zoom level to 80%
     return () => {
       document.body.style.zoom = "100%"; // Reset on component unmount
     };
   }, []);
 
+
+  const navigate = useNavigate();
+  const [index, setIndex] = useState(0);
+
+  const words = ["Welcome to Lulu Explore", "Find. Explore. Enjoy."];
+  const duration = 3000;
+
+  // Word rotation logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, duration);
+
+    return () => clearInterval(interval); // Clean up on component unmount
+  }, [words, duration]);
+
+  
   const tiles = [
     {
       id: 1,
@@ -46,9 +63,38 @@ const Home = () => {
         gap: 4,
         padding: 1,
         background: "",
-        marginTop: "-250px",
+        marginTop: "80px", // Adjusted for the navbar height
+        "@media (max-width:600px)": {
+          marginTop: "100px", // Extra margin for smaller screens
+        },
       }}
     >
+      {/* Word Rotate Component */}
+      <Box sx={{ width: "100%", textAlign: "center", marginTop: "-230px" }}>
+  <div className="overflow-hidden py-2">
+    <AnimatePresence mode="wait">
+      <motion.h1
+        key={words[index]}
+        className="text-2xl font-bold"
+        style={{
+          background: "linear-gradient(to right, #660660, #a5076b)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          fontSize: "3rem", // Adjust font size as needed
+        }}
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
+        {words[index]}
+      </motion.h1>
+    </AnimatePresence>
+  </div>
+</Box>
+
+
+      {/* Cards */}
       {tiles.map((tile) => (
         <Box
           key={tile.id}
@@ -77,7 +123,7 @@ const Home = () => {
               textAlign: "center",
               width: "100%",
               borderBottom: "2px solid #21005D",
-              paddingBottom: "5px",
+              paddingBottom: "10px",
             }}
           >
             {tile.title}
