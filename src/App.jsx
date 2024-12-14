@@ -30,8 +30,8 @@ function App() {
         <Route path="/cus" element={<Cuisine />} />
         <Route path="/navigate" element={<div>Navigate Page</div>} /> {/* Add Navigate Page */}
         <Route path="/report-bugs" element={<BugReportForm />} /> {/* Add Bug Report Page */}
-        {/*<Route path="/restaurants/:cuisineName" element={<CuisineRestaurants />} />
-        <Route path="/restaurant/:restaurantId/menu/:cuisineName" element={<CuisineMenu />} />*/}
+        <Route path="/restaurants/:cuisineName" element={<CuisineRestaurants />} />
+        <Route path="/restaurant/:restaurantId/menu/:cuisineName" element={<CuisineMenu />} />
         
       </Routes>
       <Footer/>
