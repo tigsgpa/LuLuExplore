@@ -24,7 +24,7 @@ const FoodMenuAndCuisine = () => {
     { name: "Fried Rice", image: "https://static.vecteezy.com/system/resources/thumbnails/047/601/517/small/freshly-prepared-chicken-fried-rice-with-vegetables-in-a-brown-bowl-cut-out-stock-png.png" },
     { name: "Shawarma", image: "https://pngimg.com/d/shawarma_PNG3.png" },
     { name: "Burger", image: "https://png.pngtree.com/png-clipart/20230414/original/pngtree-isolated-burger-on-transparent-background-png-image_9055072.png" },
-    { name: "Breads", image: "https://png.pngtree.com/png-clipart/20231020/original/pngtree-kulcha-naan-vegetarian-cuisine-roti-indian-cuisine-png-image_13375393.png" },
+    { name: "Bread", image: "https://png.pngtree.com/png-clipart/20231020/original/pngtree-kulcha-naan-vegetarian-cuisine-roti-indian-cuisine-png-image_13375393.png" },
     { name: "Pure Veg", image: "https://static.vecteezy.com/system/resources/previews/047/589/949/non_2x/delicious-south-indian-thali-png.png" },
     { name: "Noodles", image: "https://static.vecteezy.com/system/resources/previews/036/083/981/non_2x/ai-generated-plate-of-ramen-isolated-on-transparent-background-free-png.png" },
     { name: "Momo", image: "https://png.pngtree.com/png-vector/20240429/ourmid/pngtree-delicious-momos-with-chutney-png-image_12341945.png" },
