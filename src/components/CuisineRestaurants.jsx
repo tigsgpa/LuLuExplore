@@ -32,7 +32,7 @@ const CuisineRestaurants = () => {
         });
 
         const sortingOrders = {
-          "Biryani" : ["Halais Dum Biriyani", "Paragon", "Dindugal Thalappakatti", "Barbeque Nation", "North Express", "Nagas"],
+          "Biriyani" : ["Halais Dum Biriyani", "Paragon", "Dindugal Thalappakatti", "Barbeque Nation", "North Express", "Nagas"],
           "Fried Rice" : ["Rice And Noodles", "Wow China" , "Flame N Go", "Paragon", "Hottey Smokey"],
           "Shawarma / Rolls and Wraps" : ["Klub House", "Subway", "Wrap Vibes", "Chicking", "Burger King", "Taco Bell"],
           "Burger" : ["Burger King", "Mc' Donald", "Chicking", "Kfc"],
