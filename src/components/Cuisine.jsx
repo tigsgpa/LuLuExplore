@@ -34,7 +34,7 @@ const FoodMenuAndCuisine = () => {
     { name: "Soup", image: "https://pngimg.com/d/soup_PNG71.png" },
     { name: "Kothu Paratta", image:"https://freedoorstep.in/fdsKartV3/public/uploads/all/RGsfiLjV5Q4IaoCdOD0T0Z5uLFG9uknzzrIjLsyX.png"},
     { name: "Sandwich",image:"https://static.vecteezy.com/system/resources/thumbnails/041/277/336/small_2x/ai-generated-sandwich-with-ham-cheese-tomatoes-and-lettuce-isolated-on-transparent-background-png.png"},
-    { name: "SeaFood",image:"https://file.aiquickdraw.com/imgcompressed/img/compressed_260edacf8ac0ad91328762ae0162e1c5.webp"},
+    { name: "Seafood",image:"https://file.aiquickdraw.com/imgcompressed/img/compressed_260edacf8ac0ad91328762ae0162e1c5.webp"},
     { name: "Tacos", image:"https://png.pngtree.com/png-clipart/20230422/ourmid/pngtree-mexican-taco-crepes-with-lemon-sauce-psd-transparent-png-image_6720528.png"},
     { name: "Meals", image:"https://png.pngtree.com/png-clipart/20220813/ourmid/pngtree-onam-simple-sadhya-served-in-banana-leaf-png-image_6109188.png"},
     { name: "Snacks", image:"https://static.vecteezy.com/system/resources/previews/013/167/413/non_2x/diwali-snacks-and-sweets-free-png.png"},
