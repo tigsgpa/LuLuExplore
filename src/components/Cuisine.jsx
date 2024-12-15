@@ -45,7 +45,7 @@ const FoodMenuAndCuisine = () => {
     { name: "Chaat",image:"https://png.pngtree.com/png-vector/20240509/ourmid/pngtree-creamy-chaat-png-image_12431358.png"},
     { name: "Waffles",image:"https://png.pngtree.com/png-vector/20240506/ourmid/pngtree-berry-bonanza-waffles-with-fruit-syrup-and-luscious-blueberries-png-image_12286704.png"},
     { name: "Cafe",image:"https://static.vecteezy.com/system/resources/previews/028/882/781/non_2x/restaurant-food-food-transparent-restaurant-food-ai-generated-free-png.png"},
-    { name: "Falooda",image:"https://img.pikbest.com/origin/10/07/18/91bpIkbEsTQnd.png!sw800"},
+    { name: "Shakes",image:"https://img.pikbest.com/origin/10/07/18/91bpIkbEsTQnd.png!sw800"},
     { name: "Tea",image:"https://static.vecteezy.com/system/resources/thumbnails/017/340/372/small_2x/white-cup-of-tea-png.png"},
   ];
 
