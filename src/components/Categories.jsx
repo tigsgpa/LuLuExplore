@@ -20,7 +20,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [index, setIndex] = useState(0);
 
-  const words = ["Welcome to Lulu Explore", "Find. Explore. Enjoy."];
+  const words = ["Welcome to Lulu Mall", "Find. Explore. Enjoy."];
   const duration = 3000;
 
   // Word rotation logic
