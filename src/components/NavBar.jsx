@@ -50,7 +50,7 @@ const NavBar = () => {
           <Link to={'/'} style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
             <Box
               component="img"
-              src="https://seeklogo.com/images/L/lulu-mall-thiruvananthapuram-logo-BA3DE67AAC-seeklogo.com.png"
+              src="https://raw.githubusercontent.com/sgpa911/imgrepo/refs/heads/main/lulutvm.png"
               alt="Lulu Logo"
               sx={{
                 height: 50,
