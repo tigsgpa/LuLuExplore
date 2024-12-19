@@ -110,7 +110,7 @@ const FoodMenuAndCuisine = () => {
         padding: "-60px",
         minHeight: "100vh",
         overflow: "hidden",
-        maxWidth: "340px",
+        maxWidth: "380px",
       }}
     >
       {/* Search Bar */}
